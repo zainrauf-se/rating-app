@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: 'your_username'
+  password: 'your_password'
+
+development:
+  <<: *default
+  database: rating_app_development
+
+test:
+  <<: *default
+  database: rating_app_test
+
+production:
+  <<: *default
+  database: rating_app_production

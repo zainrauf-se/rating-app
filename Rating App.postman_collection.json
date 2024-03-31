@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "ea74e419-6524-45fe-90d9-7229333164e1",
+		"name": "Rating App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3869239"
+	},
+	"item": [
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user@test.com\",\n    \"title\": \"Test Title\",\n    \"content\": \"Test Content\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:9292/create_post",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "9292",
+					"path": [
+						"create_post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post_id\": 200001,\n    \"value\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/rate_post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"rate_post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/top_posts?limit=200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"top_posts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add feedback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owner_id\": \"100\",\n    \"user_id\": \"101\",\n    \"post_id\": 200001,\n    \"comment\": \"Feedback comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/add_feedback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"add_feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiple Authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/multiple_authors_ips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"multiple_authors_ips"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
