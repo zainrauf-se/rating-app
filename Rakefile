@@ -1,6 +1,9 @@
 # Load the environment
 require_relative 'config/environment'
 
+db_config = YAML.load_file('config/database.yml')
+ActiveRecord::Base.establish_connection(db_config['development'])
+
 namespace :db do
   desc 'Create database'
   task :create do
